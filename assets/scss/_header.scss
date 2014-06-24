@@ -1,1 +1,43 @@
 /* Header Styles */
+.top-bar {
+	&.expanded .title-area,
+	.title-area {
+		background-color: $primary-color;
+	}
+
+	&.expanded .toggle-topbar a { color: #fff; }
+
+	.title-area {
+
+		&:before {
+			background-color: $primary-color;
+			height: $topbar-height;
+			width: 10000px;
+			margin-left: -10000px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			content: "";
+			display: block;
+		}
+		.name a { color: #fff; }
+	}
+
+	section.top-bar-section {
+	}
+}
+
+.top-bar.expanded {
+	.primary-menu li.active > a {
+		background-color: $dropdown-bg;
+	}
+	.primary-menu a {
+		border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+		text-align: center;
+		padding: 25px 0;
+
+		&:hover {
+			background-color: $dropdown-bg;
+		}
+	}
+}
