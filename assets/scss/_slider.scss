@@ -1,0 +1,64 @@
+/* Slider List Styles */
+
+// Primary slider
+.flexslider {
+	border: none;
+	box-shadow: none;
+	position: relative;
+
+
+	.slider-content-wrapper {
+		color: white;
+		position: absolute;
+		top: 240px;
+
+		.slider-header {
+			@extend h3;
+			padding: rem-calc( 30 20 );
+			background-color: $primary-color;
+		}
+		.slider-content {
+			padding: rem-calc( 20 );
+		}
+		.slider-cta {
+
+		}
+	}
+}
+@media #{$small-only} {
+
+	.main-slider-container {
+		@extend .row;
+		@extend .collapse;
+	}
+
+	.main-slider-content {
+		@extend .small-12;
+		@extend .columns;
+	}
+
+	.flexslider .slider-content-wrapper {
+		position:static;
+		margin-top: 140px;
+		margin-bottom: 80px;
+	}
+
+	.flexslider img { display: none !important; }
+}
+
+/* CSS for Medium Devices */
+@media #{$medium-only} {
+
+	.main-slider-container {
+		@extend .row;
+		@extend .collapse;
+	}
+
+	.flexslider .slider-content-wrapper {
+		position:static;
+		margin-top: 140px;
+		margin-bottom: 80px;
+	}
+	.flexslider img { display: none !important; }
+
+}

@@ -6,3 +6,4 @@ Works well with the following plugins:
 
 - Pico-Testimonials
 - Pico-AnySlider (or Pico-Slider)
+- jQuery UnSlider (used in HTML theme) - probably has enough functionality
