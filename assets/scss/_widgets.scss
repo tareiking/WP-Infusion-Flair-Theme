@@ -1,1 +1,37 @@
 /* Widget Styles */
+
+/**
+ * Featured Folio Widget
+ *
+ * @see inc/infusion-template-tags.php
+ */
+.featured-folio {
+
+	.folio-avatar {
+		height: 88px;
+		width: 88px;
+		background: url(../img/av02.png) no-repeat;
+		position: relative;
+		margin: -55px auto;
+	}
+
+	.folio-content {
+		padding: rem-calc( 75 25 10 25 );
+		border-left: solid 1px #dbe1e7;
+
+		h3, p {
+			color: #737c85;
+			font-size: rem-calc( 21 );
+		}
+
+		h3 {
+		}
+
+		p {
+			font-size: rem-calc( 14 );
+			word-spacing: 2px;
+
+		}
+
+	}
+}
