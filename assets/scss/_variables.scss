@@ -28,4 +28,5 @@ $dropdown-bg: rgb(36, 42, 44);
 
 .has-top-triangle {
 	@include has-top-triangle();
+	padding-top: 25px;
 }
