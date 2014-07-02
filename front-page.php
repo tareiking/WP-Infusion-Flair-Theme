@@ -13,10 +13,15 @@ get_header(); ?>
 	$slider->do_slider();
 } ?>
 
+<?php if ( class_exists( 'Infusion_Template_Tags' ) ) {
+	$folio = Infusion_Template_Tags::render_featured_folio();
+	} ?>
+
+
 	<div class="row has-top-triangle">
 
 		<!-- Main Blog Content -->
-		<div class="large-9 columns content" role="content">
+		<div class="large-12 columns content" role="content">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -34,5 +39,4 @@ get_header(); ?>
 	</div>
 		<!-- End Main Content -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
