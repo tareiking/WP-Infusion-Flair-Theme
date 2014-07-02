@@ -13,7 +13,7 @@ get_header(); ?>
 	$slider->do_slider();
 } ?>
 
-	<div class="row">
+	<div class="row has-top-triangle">
 
 		<!-- Main Blog Content -->
 		<div class="large-9 columns content" role="content">

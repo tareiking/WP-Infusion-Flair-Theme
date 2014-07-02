@@ -3,3 +3,29 @@ $primary-color: rgb(99, 198, 174);
 $green: $primary-color;
 $dark-gray: rgb(88, 97, 101);
 $dropdown-bg: rgb(36, 42, 44);
+
+
+@mixin has-top-triangle( $size: 37px, $color: #fff ) {
+
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		margin-top: -($size - 10px);
+		left:50%;
+		margin-left: -$size;
+		top:0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 $size $size $size;
+		border-color: transparent transparent $color transparent;
+
+	}
+}
+
+.has-top-triangle {
+	@include has-top-triangle();
+}
