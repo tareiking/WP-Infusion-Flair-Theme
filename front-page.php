@@ -2,6 +2,10 @@
 /**
  * The template for displaying Home Page
  *
+ * @uses Infusion_Unslider
+ *
+ * @todo How do we inject the widget areas?
+ *
  * @package Flair Theme
  */
 
