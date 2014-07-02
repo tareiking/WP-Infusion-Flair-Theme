@@ -1,5 +1,7 @@
 *.DS_Store
 /css/*
+.bowerrc
+
 /bower_components/*
 /node_modules/*
 /releases/*
