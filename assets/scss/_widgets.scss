@@ -40,4 +40,13 @@
 		}
 
 	}
+
 }
+/**
+ * Overide responsive sizes when in a sidebar
+ *
+ * @todo A better way to deal with widgetized areas is needed.
+ * @todo This will miss anything in .content.widget area IE: Page Builder
+ * @todo And also any other widget areas .footer, .custom-widget-area
+ */
+.sidebar .featured-folio-item { @extend .small-12; }
