@@ -14,9 +14,19 @@ get_header(); ?>
 } ?>
 
 <?php if ( class_exists( 'Infusion_Template_Tags' ) ) {
-	$folio = Infusion_Template_Tags::render_featured_folio();
+	// $folio = Infusion_Template_Tags::render_featured_folio();
 	} ?>
 
+	<!-- Recent Posts Tempoary Widget Area -->
+	<div class="row recent-posts">
+		<div class="small-12 medium-12 columns">
+
+			<?php if ( ! dynamic_sidebar( 'test-recent-posts-widget-area' ) ) : ?>
+
+			<?php endif; // end sidebar widget area ?>
+
+		</div>
+	</div>
 
 	<div class="row has-top-triangle">
 
