@@ -8,11 +8,17 @@
 .featured-folio {
 
 	.folio-avatar {
-		height: 88px;
-		width: 88px;
-		background: url(../img/av02.png) no-repeat;
 		position: relative;
 		margin: -55px auto;
+		width: 88px;
+		height: 88px;
+
+		.avatar {
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+
 	}
 
 	.folio-content {
