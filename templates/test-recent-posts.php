@@ -1,27 +1,14 @@
 <?php
 /**
- * The template for displaying Home Page
+ * Template Name: TEST: Recent Posts Template
  *
- * @uses Infusion_Unslider
- *
- * @todo How do we inject the widget areas?
+ * The template for displaying the Sidebar on the left hand side of the page
  *
  * @package Flair Theme
  */
 
 get_header(); ?>
 
-
-<?php if ( class_exists( 'Infusion_Unslider' ) ) {
-	$slider = Infusion_Unslider::get_instance();
-	$slider->do_slider();
-} ?>
-
-<?php if ( class_exists( 'Infusion_Template_Tags' ) ) {
-	// $folio = Infusion_Template_Tags::render_featured_folio();
-	} ?>
-
-	<!-- Recent Posts Tempoary Widget Area -->
 	<div class="row recent-posts">
 		<div class="small-12 medium-12 columns">
 
@@ -32,14 +19,14 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="row has-top-triangle">
+	<div class="row">
 
 		<!-- Main Blog Content -->
-		<div class="large-12 columns content" role="content">
+		<div class="medium-12 large-12 columns content" role="content">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'parts/content', 'single' ); ?>
+				<?php get_template_part( 'parts/content', 'page' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template

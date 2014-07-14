@@ -1,1 +1,52 @@
 /* Widget Styles */
+
+/**
+ * Featured Folio Widget
+ *
+ * @see inc/infusion-template-tags.php
+ */
+.featured-folio {
+
+	.folio-avatar {
+		position: relative;
+		margin: -55px auto;
+		width: 88px;
+		height: 88px;
+
+		.avatar {
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+
+	}
+
+	.folio-content {
+		padding: rem-calc( 75 25 10 25 );
+		border-left: solid 1px #dbe1e7;
+
+		h3, p {
+			color: #737c85;
+			font-size: rem-calc( 21 );
+		}
+
+		h3 {
+		}
+
+		p {
+			font-size: rem-calc( 14 );
+			word-spacing: 2px;
+
+		}
+
+	}
+
+}
+/**
+ * Overide responsive sizes when in a sidebar
+ *
+ * @todo A better way to deal with widgetized areas is needed.
+ * @todo This will miss anything in .content.widget area IE: Page Builder
+ * @todo And also any other widget areas .footer, .custom-widget-area
+ */
+.sidebar .featured-folio-item { @extend .small-12; }
