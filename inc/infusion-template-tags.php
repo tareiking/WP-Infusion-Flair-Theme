@@ -11,8 +11,10 @@ if ( ! class_exists( 'Infusion_Template_Tags' ) ){
 		private static $instance;
 
 		static function get_instance() {
-			if ( ! self::$instance ) {
-				self::$instance = new Infusion_Unslider;
+			if ( class_exists( 'Infusion_Unslider' ) ) {
+				if ( ! self::$instance ) {
+					self::$instance = new Infusion_Unslider;
+				}
 			}
 
 			return self::$instance;
