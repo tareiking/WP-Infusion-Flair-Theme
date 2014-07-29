@@ -12,13 +12,13 @@
 get_header(); ?>
 
 
-<?php if ( class_exists( 'Infusion_Unslider' ) ) {
-	$slider = Infusion_Unslider::get_instance();
-	$slider->do_slider();
+<?php if ( class_exists( 'Pico_Slider' ) ) {
+	$slider = Pico_Slider::get_instance();
+	$slider->do_slider( '' );
 } ?>
 
 <?php if ( class_exists( 'Infusion_Template_Tags' ) ) {
-	// $folio = Infusion_Template_Tags::render_featured_folio();
+	$folio = Infusion_Template_Tags::render_featured_folio();
 	} ?>
 
 	<!-- Recent Posts Tempoary Widget Area -->
