@@ -39,7 +39,7 @@ get_header(); ?><!doctype html>
 		<ul class="title-area">
 			<!-- Title Area -->
 			<li class="name"><h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1></li>
-			<li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
 		</ul>
 
 		<section class="top-bar-section">
