@@ -132,7 +132,7 @@ add_action( 'widgets_init', 'flair_widgets_init' );
  */
 function flair_scripts() {
 	wp_enqueue_style( 'flair-style', get_stylesheet_uri() );
-
+	wp_enqueue_style( 'google-fonts', flair_font_url(), array(), null );
 	wp_enqueue_style( 'foundation-style', get_stylesheet_directory_uri() . '/assets/css/style.css', array(), '1.0' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -146,6 +146,17 @@ function flair_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'flair_scripts' );
+
+/**
+ * Register Open Sans Google font.
+ *
+ * @return string
+ */
+function flair_font_url() {
+	$font_url = add_query_arg( 'family', urlencode( 'Open Sans:400italic,600italic,400,600,300,700' ), "//fonts.googleapis.com/css" );
+
+	return $font_url;
+}
 
 /* Let's add the includes. Unused includes will be deleted during setup  */
 foreach ( glob( get_template_directory() . '/inc/*.php' ) as $filename ) {
