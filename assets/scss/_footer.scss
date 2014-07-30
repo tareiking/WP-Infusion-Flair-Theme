@@ -1,1 +1,37 @@
 /* Footer styles */
+
+.footer {
+	background-color: $footer-bg-color;
+	color: $footer-color;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $footer-color;
+	}
+
+	.footer-content {
+		padding: rem-calc(60 0);
+
+		.widget {
+			@extend .medium-2;
+			@extend .columns;
+		}
+
+		.widget + .widget {
+			@extend .medium-5;
+		}
+
+		.widget + .widget + .widget {
+			@extend .medium-3;
+		}
+
+		.widget + .widget + .widget + .widget {
+			@extend .medium-2;
+		}
+	}
+
+	ul {
+		margin-left: 0;
+		list-style: none;
+	}
+
+}
