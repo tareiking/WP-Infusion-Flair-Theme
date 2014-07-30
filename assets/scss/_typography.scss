@@ -2,3 +2,18 @@
  * You're probably wondering where the rest of the magic for styling is aren't you? It's in _settings.scss
  * and bower_components/foundation/scss/foundation/components/_type.scss. Neat huh?
  */
+
+.button {
+
+	margin-right: 15px;
+	padding: 15px 40px;
+	border-radius: $global-radius;
+
+	&.button-secondary {
+		background-color: $secondary-color;
+
+		&:hover {
+			background-color: scale-color($secondary-color, $lightness: $button-function-factor)
+		}
+	}
+}
