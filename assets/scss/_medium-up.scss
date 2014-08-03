@@ -1,3 +1,6 @@
 /* CSS for Medium Devices and up */
 @media #{$medium-up} {
+	.sidebar {
+		padding-top: 100px;
+	}
 }
