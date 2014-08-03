@@ -3,6 +3,46 @@
  * and bower_components/foundation/scss/foundation/components/_type.scss. Neat huh?
  */
 
+
+h1 {
+	font-size: rem-calc(35);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+h2 {
+	font-size: rem-calc(30);
+}
+h3 {
+	color: $secondary-color;
+}
+h4 {
+	font-size: rem-calc(20);
+	font-weight: 300;
+	color: $secondary-color;
+	font-family: $body-font-family;
+}
+h5 {}
+h6 {}
+
+pre,
+kbd,
+code {
+	white-space: pre-wrap;
+	background-color: #f5f5f5;
+	color: #3d424e;
+	border: 1px solid #dcdcdc;
+}
+
+pre {
+	padding: rem-calc(15);
+	line-height: 1.5;
+	margin-bottom: rem-calc(15);
+}
+
+.gallery:after {
+	clear: both;
+}
 .button {
 
 	margin-right: 15px;
@@ -15,5 +55,50 @@
 		&:hover {
 			background-color: scale-color($secondary-color, $lightness: $button-function-factor)
 		}
+	}
+}
+
+.content,
+.sidebar {
+	ul {
+		li { list-style: none; }
+
+		li:before {
+			content:'\f105';
+			font-family: "FontAwesome";
+			display: inline-block;
+			color: $secondary-color;
+			margin-right: 8px;
+		}
+	}
+}
+
+.sidebar {
+
+	font-size: rem-calc(12);
+
+	.widget-title {
+		@extend h3;
+	}
+
+	ol,
+	ul {
+		list-style: none;
+		margin-left: 0;
+	}
+
+	ul,
+	ul li a {
+		font-weight: 400;
+		line-height: 2;
+	}
+
+	ul li a:hover,
+	.active a {
+		color: $sidebar-text-active;
+	}
+
+	li ul {
+		margin-left: 1em;
 	}
 }

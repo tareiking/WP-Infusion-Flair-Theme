@@ -33,14 +33,14 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-// $row-width: rem-calc(1000);
+$row-width: rem-calc(1180);
 // $total-columns: 12;
 
 // Global
 
 // We use these to define default font weights
 // $font-weight-normal: normal !default;
-// $font-weight-bold: bold !default;
+$font-weight-bold: 600 !default;
 
 // We use these to control various global styles
 // $body-bg: #fff;
@@ -60,7 +60,7 @@ $body-font-style: normal;
 
 // We use these as default colors throughout
 $primary-color: rgb(99, 198, 174);
-// $secondary-color: #e7e7e7;
+$secondary-color: #737c85;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -135,7 +135,7 @@ $header-font-color: #737c85;
 // We use these to control header font sizes
 // $h1-font-size: rem-calc(44);
 // $h2-font-size: rem-calc(37);
-// $h3-font-size: rem-calc(27);
+$h3-font-size: rem-calc(21);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
