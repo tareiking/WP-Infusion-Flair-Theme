@@ -178,3 +178,24 @@ function get_flair_top_bar( $class = '' ) {
 
 	return apply_filters( 'flair_top_bar', $classes, $class );
 }
+
+/**
+ * Flair Thumbnail Image Source
+ *
+ */
+function get_post_thumbnail_src( $size = 'large' ){
+	global $post;
+
+	$thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size, false );
+	$thumb_url = $thumb_url[0];
+
+	if ( false == $thumb_url ) {
+		return false;
+	}
+
+	return $thumb_url;
+}
+
+function the_post_thumbnail_src( $size = 'large' ){
+	echo get_post_thumbnail_src( $size );
+}

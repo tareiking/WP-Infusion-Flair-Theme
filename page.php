@@ -12,6 +12,12 @@
 
 get_header(); ?>
 
+	<?php if ( has_post_thumbnail( ) ): ?>
+		<div style="min-height: 400px; background: url('<?php the_post_thumbnail_src( "large" )?>') no-repeat center center transparent; background-size: cover; ">
+		</div>
+	<?php endif ?>
+
+
 	<div class="row">
 
 		<!-- Main Blog Content -->
