@@ -107,7 +107,7 @@ function flair_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Blog Widget Area', 'flair' ),
+		'name'          => __( 'Blog Sidebar', 'flair' ),
 		'id'            => 'blog-widget-area',
 		'description'   => __( 'The blog widget area which is located on the left or right hand side of the blog posts and archives', 'flair' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -117,7 +117,7 @@ function flair_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Page Widget Area', 'flair' ),
+		'name'          => __( 'Page Sidebar', 'flair' ),
 		'id'            => 'page-widget-area',
 		'description'   => __( 'The page widget area which is located on the left or right hand side of the pages', 'flair' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -127,7 +127,7 @@ function flair_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Widget Area', 'flair' ),
+		'name'          => __( 'Footer Area', 'flair' ),
 		'id'            => 'footer-widget-area',
 		'description'   => __( 'The footer widget area which is located at the bottom of the site', 'flair' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s side-nav">',
@@ -135,6 +135,7 @@ function flair_widgets_init() {
 		'before_title'  => '<h5 class="widget-title">',
 		'after_title'   => '</h5>',
 	) );
+
 }
 add_action( 'widgets_init', 'flair_widgets_init' );
 
