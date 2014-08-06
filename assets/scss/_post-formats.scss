@@ -1,1 +1,16 @@
 /* Post Format Styles */
+.entry-meta {
+
+	.fa {
+		margin: 0 5px 0 10px;
+		color: $secondary-color;
+	}
+
+	.fa:first-child {
+		margin-left: none;
+	}
+}
+
+.entry-header:first-child .entry-meta{
+	padding-bottom: 30px;
+}
