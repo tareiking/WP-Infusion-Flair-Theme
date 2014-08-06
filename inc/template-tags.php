@@ -80,14 +80,14 @@ function flair_posted_on() {
 
 	if ( ! post_password_required() && ( '0' != get_comments_number() ) ) {
 		if ( get_comments_number() > '10' ) {
-			echo "<span class='comment-count more-than-10-comments'><a href='" . get_comments_link() ."' title='Leave a comment'>" . get_comments_number() . "</a></span>";
+			echo "<span class='comment-count more-than-10-comments'><i class=\"fa fa-comment\"></i><a href='" . get_comments_link() ."' title='Leave a comment'>" . get_comments_number() . "</a></span>";
 		}
 		else {
-			echo "<span class='comment-count'><a href='" . get_comments_link() ."' title='Leave a comment'>" . get_comments_number() . "</a></span>";
+			echo "<span class='comment-count'><i class=\"fa fa-comment\"></i><a href='" . get_comments_link() ."' title='Leave a comment'>" . get_comments_number() . "</a></span>";
 		}
 	}
 
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published" datetime="%1$s"><i class="fa fa-clock-o"></i> %2$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -96,11 +96,11 @@ function flair_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">This entry was posted in %1$s</span><span class="byline"> by %2$s</span>', 'sennzaversion3' ),
+	printf( __( '<span class="posted-on">%1$s</span><span class="byline"><i class="fa fa-child"></i>%2$s</span>', 'sennzaversion3' ),
 		sprintf( '%1$s',
 			$time_string
 		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+		sprintf( '<span class="author"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
 		)

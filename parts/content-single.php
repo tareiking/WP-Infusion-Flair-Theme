@@ -24,6 +24,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
+		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', 'flair' ) );
@@ -34,17 +35,17 @@
 			if ( ! flair_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'flair' );
+					$meta_text = __( '<i class="fa fa-tags"></i> %2$s. <i class="fa fa-bookmark"></i><a href="%3$s" rel="bookmark">Bookmark</a>.', 'flair' );
 				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'flair' );
+					$meta_text = __( '<i class="fa fa-bookmark"></i><a href="%3$s" rel="bookmark">Bookmark</a>.', 'flair' );
 				}
 
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'flair' );
+					$meta_text = __( '<i class="fa fa-tags"></i> %1$s and %2$s.  <i class="fa fa-bookmark"></i> <a href="%3$s" rel="bookmark">Bookmark</a>.', 'flair' );
 				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'flair' );
+					$meta_text = __( '<i class="fa fa-tags"></i> %1$s. <i class="fa fa-bookmark"></i> <a href="%3$s" rel="bookmark">Bookmark</a>.', 'flair' );
 				}
 
 			} // end check for categories on this blog
@@ -56,6 +57,7 @@
 				get_permalink()
 			);
 		?>
+		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php edit_post_link( __( 'Edit', 'flair' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
