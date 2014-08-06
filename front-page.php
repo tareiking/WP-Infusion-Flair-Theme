@@ -17,17 +17,13 @@ get_header(); ?>
 		$slider->do_slider( '' );
 	} ?>
 
-	<?php if ( class_exists( 'Infusion_Template_Tags' ) ) {
-		// $folio = Infusion_Template_Tags::render_featured_folio();
-	} ?>
-
 	<!-- Recent Posts Tempoary Widget Area -->
-	<div class="row recent-posts">
+	<div class="row">
 		<div class="small-12 medium-12 columns">
 
-			<?php if ( ! dynamic_sidebar( 'test-recent-posts-widget-area' ) ) : ?>
+			<?php if ( ! dynamic_sidebar( 'homepage-widgets-area' ) ) : ?>
 
-			<?php endif; // end sidebar widget area ?>
+			<?php endif; // end homepage widgets ?>
 
 		</div>
 	</div>

@@ -95,6 +95,17 @@ add_action( 'after_setup_theme', 'flair_setup' );
  * Register widgetized area and update sidebar with default widgets
  */
 function flair_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => __( 'Homepage Widgets', 'flair' ),
+		'id'            => 'homepage-widgets-area',
+		'description'   => __( 'Recommended: Use any Infusion Widgets for best look and flow. Displays above front-page page content.', 'flair' ),
+		'before_widget' => '<aside id="%1$s" class="widget homepage-widgets-area %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+	) );
+
 	register_sidebar( array(
 		'name'          => __( 'Blog Widget Area', 'flair' ),
 		'id'            => 'blog-widget-area',
