@@ -36,17 +36,31 @@
 		p {
 			font-size: rem-calc( 14 );
 			word-spacing: 2px;
-
 		}
 
 	}
 
+	.carousel-overlay {
+		height: 100%;
+		position: absolute;
+		left: 15px;
+		right: 15px;
+		top: 0px;
+		opacity: 0;
+		border: solid 5px #63c6ae;
+	}
+
+	.featured-folio-item:hover .carousel-overlay {
+		opacity: 1;
+	}
+
+	.featured-folio-item:hover .folio-avatar .avatar {
+		border: solid 5px #63c6ae;
+	}
+
 }
 /**
- * Overide responsive sizes when in a sidebar
- *
- * @todo A better way to deal with widgetized areas is needed.
- * @todo This will miss anything in .content.widget area IE: Page Builder
- * @todo And also any other widget areas .footer, .custom-widget-area
+ * If contained in sidebar or .small-12, lets make it fullscreen
  */
-.sidebar .featured-folio-item { @extend .small-12; }
+.sidebar .featured-folio-item,
+.small-12.columns > .featured-folio-item { @extend .small-12; }
