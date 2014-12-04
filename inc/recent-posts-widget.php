@@ -46,11 +46,15 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
+			$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
+			if ( ! $number )
+				$number = 4;
+
 			/**
 			 * Filter the arguments for the Recent Posts widget.
 			 */
-			$r = new WP_Query( apply_filters( 'infusion_recent_posts_query_args', array(
-				'posts_per_page'      => 4,
+			$r = new WP_Query( apply_filters( 'widget_posts_args', array(
+				'posts_per_page'      => $number,
 				'no_found_rows'       => true,
 				'post_status'         => 'publish',
 				'ignore_sticky_posts' => true
@@ -131,7 +135,8 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 			$instance = $old_instance;
 
 			$instance = $old_instance;
-			$instance['title'] = strip_tags( $new_instance['title'] );
+			$instance['title']  = strip_tags( $new_instance['title'] );
+			$instance['number'] = (int) $new_instance['number'];
 
 			return $instance;
 
@@ -143,12 +148,19 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 		public function form( $instance ) {
 
 			$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
-			$title = strip_tags( $instance['title'] ); ?>
+			$title = strip_tags( $instance['title'] );
+			$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 4; ?>
 
 			<p>
 				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 			</p>
+
+			<p>
+				<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label>
+				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
+			</p>
+
 			<?php
 		}
 
