@@ -62,7 +62,14 @@
 
 }
 /**
- * If contained in sidebar or .small-12, lets make it fullscreen
+ * Featured Folio in our sidebars :)
  */
 .sidebar .featured-folio-item,
-.small-12.columns > .featured-folio-item { @extend .small-12; }
+.small-12.columns > .featured-folio-item { 
+	@extend .small-12; 
+	margin-bottom: rem-calc(15); 
+}
+
+.sidebar .folio-content {
+	border: none;
+}
