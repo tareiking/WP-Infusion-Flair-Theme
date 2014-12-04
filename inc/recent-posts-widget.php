@@ -1,6 +1,8 @@
 <?php
 /**
  * Infusion Recent Posts Widget
+ * 
+ * This widget is used to replace the default Reccent Posts Widget bundled in WordPress. It initiates a mo
  *
  * @package   Infusion Recent Posts Widget
  * @author    Tarei King
@@ -8,17 +10,6 @@
  * @link      http://tarei.me
  * @copyright 2014 Tarei King
  *
- * Plugin Name:       Infusion Recent Posts Widget
- * Plugin URI:        http://tarei.me/plugins/
- * Description:       Displays Sticky Posts with an avatar picture and excerpt in widget areas.
- * Version:           1.0.0
- * Author:            Tarei King
- * Author URI:        http://tarei.me
- * Text Domain:       infusion_recent_posts
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path:       /languages
- * GitHub Plugin URI: https://github.com/<owner>/<repo>
  */
 
 if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
