@@ -67,15 +67,13 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 
 				$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base );
 
-				if ( '' != $title ) : ?>
+				if ( '' != $title ) { ?>
+				
 				<div class="featured-folio-header full-width-header">
-					<div class="row">
-						<div class="small-12">
-							<h3><?php _e( $title ); ?></h3>
-						</div>
-					</div>
+					<h3><?php _e( $title ); ?></h3>
 				</div>
-				<?php endif; ?>
+				
+				<?php } ?>
 
 				<div class="row featured-folio" data-equalizer>
 
