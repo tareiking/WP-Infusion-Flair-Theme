@@ -69,9 +69,7 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 
 				if ( '' != $title ) { ?>
 				
-				<div class="featured-folio-header full-width-header">
-					<h3><?php _e( $title ); ?></h3>
-				</div>
+				<h3><?php _e( $title ); ?></h3>
 				
 				<?php } ?>
 
