@@ -87,7 +87,7 @@ function recent_posts_closing_markup(){
 	return $markup;
 }
 
-add_filter( 'infusion_recent_posts_f5_closing_tag', 'recent_posts_closing_markup' );
+add_filter( 'infusion_recent_posts_closing_tag', 'recent_posts_closing_markup' );
 
 
 function recent_posts_opening_markup(){
@@ -97,7 +97,7 @@ function recent_posts_opening_markup(){
 	return $markup;
 }
 
-add_filter( 'infusion_recent_posts_f5_opening_tag', 'recent_posts_opening_markup' );
+add_filter( 'infusion_recent_posts_opening_tag', 'recent_posts_opening_markup' );
 
 function alter_recent_posts_qry( $qry ) {
 
