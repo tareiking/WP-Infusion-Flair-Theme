@@ -63,6 +63,8 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 
 			if ($r->have_posts()) :
 
+				echo $before_widget;
+
 				$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base );
 
 				if ( '' != $title ) : ?>
