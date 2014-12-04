@@ -77,11 +77,7 @@ module.exports = function(grunt) {
 	}
 
 });
-    grunt.loadNpmTasks('grunt-bowercopy');
-	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-compress');
+
 
 	grunt.registerTask('setup', ['bowercopy','sass','watch']);
 	grunt.registerTask('default', ['sass','watch']);
