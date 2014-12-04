@@ -106,12 +106,3 @@ function recent_posts_opening_markup(){
 }
 
 add_filter( 'infusion_recent_posts_opening_tag', 'recent_posts_opening_markup' );
-
-function alter_recent_posts_qry( $qry ) {
-
-	$qry['posts_per_page'] = 4;
-
-	return $qry;
-}
-
-add_filter ('infusion_recent_posts_query_args', 'alter_recent_posts_qry' );
