@@ -69,7 +69,7 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 
 				if ( '' != $title ) { ?>
 				
-				<h3><?php _e( $title ); ?></h3>
+				<h3 class="widget-title"><?php _e( $title ); ?></h3>
 				
 				<?php } ?>
 
