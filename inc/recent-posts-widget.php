@@ -29,9 +29,6 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 				)
 			);
 
-			add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_scripts' ) );
-			add_action( 'wp_enqueue_scripts', array( $this, 'register_widget_scripts' ) );
-
 		}
 
 		/**
@@ -161,26 +158,6 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 			</p>
 
 			<?php
-		}
-
-		/**
-		 * Registers and enqueues admin-specific JavaScript.
-		 */
-		public function register_admin_scripts() {
-
-			wp_enqueue_style( $this->get_widget_slug().'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ) );
-			wp_enqueue_script( $this->get_widget_slug().'-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array('jquery') );
-
-		}
-
-		/**
-		 * Registers and enqueues widget-specific scripts.
-		 */
-		public function register_widget_scripts() {
-
-			wp_enqueue_style( $this->get_widget_slug().'-widget-styles', plugins_url( 'css/widget.css', __FILE__ ) );
-			wp_enqueue_script( $this->get_widget_slug().'-script', plugins_url( 'js/widget.js', __FILE__ ), array('jquery') );
-
 		}
 
 	}
