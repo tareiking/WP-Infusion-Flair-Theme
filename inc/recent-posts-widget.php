@@ -175,4 +175,15 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 	}
 
 }
-add_action( 'widgets_init', create_function( '', 'register_widget("Infusion_Recent_Posts_Widget");' ) );
+
+/**
+ * Initialize our Replacement Recent Posts Widget
+ *
+ * @todo : if people want to use the original WordPress widget, make affordances for them.
+ */
+function infusion_init_recent_posts_widget(){
+	unregister_widget( 'WP_Widget_Recent_Posts' );
+	register_widget( 'Infusion_Recent_Posts_Widget' );
+}
+
+add_action( 'widgets_init', 'infusion_init_recent_posts_widget' );
