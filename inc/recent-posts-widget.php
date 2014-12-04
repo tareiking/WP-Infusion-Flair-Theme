@@ -58,8 +58,7 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 			) ) );
 
 			// Filter for Opening Markup
-			$opentag = apply_filters( 'infusion_recent_posts_f5_opening_tag' );
-			echo $opentag['markup'];
+			echo apply_filters( 'infusion_recent_posts_f5_opening_tag' );
 
 			if ($r->have_posts()) :
 
@@ -116,8 +115,7 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 			<?php
 
 			// Filter for Closing Markup
-			$closetag = apply_filters( 'infusion_recent_posts_f5_closing_tag' );
-			echo $closetag['markup'];
+			echo apply_filters( 'infusion_recent_posts_f5_closing_tag' );
 
 			// Reset the global $the_post as this query will have stomped on it
 			wp_reset_postdata();
