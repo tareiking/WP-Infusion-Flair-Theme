@@ -122,6 +122,8 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 			// Reset the global $the_post as this query will have stomped on it
 			wp_reset_postdata();
 
+			echo $after_widget;
+
 			endif;
 
 		} // End widget
