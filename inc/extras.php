@@ -82,7 +82,7 @@ add_action( 'wp', 'flair_setup_author' );
  */
 function recent_posts_closing_markup(){
 
-	$markup = array( 'markup' => '<div class="row"><div class="small-12 medium-12 columns">');
+	$markup = '<div class="row"><div class="small-12 medium-12 columns">';
 
 	return $markup;
 }
@@ -92,7 +92,7 @@ add_filter( 'infusion_recent_posts_f5_closing_tag', 'recent_posts_closing_markup
 
 function recent_posts_opening_markup(){
 
-	$markup = array( 'markup' => '</div></div>' );
+	$markup = '</div></div>';
 
 	return $markup;
 }
