@@ -42,6 +42,7 @@ if ( ! class_exists( 'Infusion_Recent_Posts_Widget' ) ) {
 		 * Outputs the content of the widget.
 		 */
 		public function widget( $args, $instance ) {
+			extract( $args );
 
 			$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
 			if ( ! $number )
