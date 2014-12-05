@@ -213,7 +213,7 @@ function flair_enqueue_tabs() {
 
 function flair_interchange_sizes() {
 	add_image_size( 'interchange-small', 480, 99999 );
-	add_image_size( 'interchange-medium', 768, 99999 );
+	add_image_size( 'interchange-medium', 850, 99999 );
 	add_image_size( 'interchange-large', 1024, 99999 );
 	add_image_size( 'interchange-retina', 1920, 99999 );
 }
