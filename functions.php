@@ -82,7 +82,7 @@ function flair_setup() {
 	//add_theme_support( 'foundation-alert' );
 	//add_theme_support( 'foundation-tooltip' );
 	//add_theme_support( 'foundation-joyride' );
-	//add_theme_support( 'foundation-equalizer' );
+	add_theme_support( 'foundation-equalizer' );
 	//add_theme_support( 'foundation-accordion' );
 	//add_theme_support( 'foundation-tabs' );
 	add_theme_support( 'remove-comments' );

@@ -13,7 +13,7 @@ $slider_items = new WP_Query( $args );
 if ( $slider_items->have_posts() ): ?>
 
 	<div class="flexslider infusion-unslider">
-		<ul class="slides">
+		<ul class="slides" data-equalizer>
 			<?php while ( $slider_items->have_posts() ) : $slider_items->the_post(); ?>
 			<?php
 				$button_1_title	= get_post_meta( $slider_items->post->ID, 'button_1_title', true );
@@ -24,7 +24,7 @@ if ( $slider_items->have_posts() ): ?>
 					$large_image = $large_image_url[0];
 				}
  			?>
-				<li style="background-image: url('<?php echo $large_image; ?>');">
+				<li style="background-image: url('<?php echo $large_image; ?>');" data-equalizer-watch class="slider-item">
 
 					<h4 class="slider-title medium-5 columns text-center small-centered">
 							<?php the_title(); ?>
