@@ -71,7 +71,7 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 			'posts_per_page'      => $number,
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
-			'ignore_sticky_posts' => true
+			'post__in'  => get_option( 'sticky_posts' ),
 		) ) );
 
 		if ($r->have_posts()) : 
