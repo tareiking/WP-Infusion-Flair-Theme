@@ -60,30 +60,38 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 
 		extract( $args, EXTR_SKIP );
 
+		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
+		if ( ! $number )
+			$number = 12;
+
 		$widget_string = $before_widget;
 
 		// The Widget!
 		$r = new WP_Query( apply_filters( 'infusion_recent_posts_args', array(
-			'posts_per_page'      => 12,
+			'posts_per_page'      => $number,
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
 			'ignore_sticky_posts' => true
 		) ) );
 
-		if ($r->have_posts()) : ?>
+		if ($r->have_posts()) : 
+
+			echo $before_widget;
+
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base ); ?>
 
 		<!-- @TODO: Must declare support if using foundation columns, helps go full screen -->
 		</div></div>
 
-		<!-- @TODO: If Widget Header specified -->
-		<div class="latest-articles">
-			<div class="row">
-				<div class="small-12">
-					<h3><?php _e( 'Latest Articles') ?></h3>
+		<?php if ( '' != $title ) { ?>
+			<div class="latest-articles">
+				<div class="row">
+					<div class="small-12">
+						<h3 class="widget-title"><?php _e( $title ); ?></h3>
+					</div>
 				</div>
 			</div>
-		</div>
-		<!-- @TODO: If Widget Header specified -->
+		<?php } ?>
 
 		<!-- Masonry Widget Render starts here... -->
 		<div id="masonry-loop">
@@ -121,13 +129,9 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 
 		<?php
 
-		$widget_string .= $after_widget;
+		wp_reset_postdata();
 
-		$cache[ $args['widget_id'] ] = $widget_string;
-
-		wp_cache_set( $this->get_widget_slug(), $cache, 'widget' );
-
-		print $widget_string;
+		echo $after_widget;
 
 	} // end widget
 
@@ -138,7 +142,8 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 
 		$instance = $old_instance;
 
-		// TODO: Here is where you update your widget's old values with the new, incoming values
+		$instance['title']  = strip_tags( $new_instance['title'] );
+		$instance['number'] = (int) $new_instance['number'];
 
 		return $instance;
 
@@ -151,15 +156,24 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		// TODO: Define default values for your variables
-		$instance = wp_parse_args(
-			(array) $instance
-		);
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
 
-		// TODO: Store the values of the widget in their own variable
+		$title     = strip_tags( $instance['title'] );
+		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 4; ?>
 
-		// Display the admin form
-		include( plugin_dir_path(__FILE__) . 'views/admin.php' );
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label>
+			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
+		</p>
+
+		<?php
+
+		return $instance;
 
 	} // end form
 
