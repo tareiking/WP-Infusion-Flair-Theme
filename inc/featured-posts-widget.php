@@ -181,8 +181,10 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 	 */
 	public function register_widget_scripts() {
 
-		wp_enqueue_script( $this->get_widget_slug().'-script', plugins_url( 'js/widget.js', __FILE__ ), array('jquery') );
 		wp_enqueue_script( 'masonry' );
+		wp_enqueue_script( 'infusion-featured-posts', get_template_directory_uri() . '/assets/js/featured-posts.js', array( 'jquery' ), '1.0', true );
+
+
 
 	} // end register_widget_scripts
 
