@@ -123,7 +123,7 @@
 }
 
 /**
- * Media Queries
+ * Media Queries: Featured Folio
  */
 @media (min-width: 1025px) {
 	#masonry-loop .masonry-entry {
@@ -149,4 +149,8 @@
 	#masonry-loop .masonry-entry {
 		width: 100%;
 	}
+}
+
+.sidebar #masonry-loop .masonry-entry {
+	width: 100%;
 }
