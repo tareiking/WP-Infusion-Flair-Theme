@@ -106,3 +106,36 @@ function recent_posts_opening_markup(){
 }
 
 add_filter( 'infusion_recent_posts_opening_tag', 'recent_posts_opening_markup' );
+
+
+/**
+ * Recent Featured Widget Filters
+ */
+function featured_posts_closing_markup(){
+
+	if ( is_front_page() || is_home() || is_page_template( 'templates/full-width' ) ) {
+
+		$markup = '<div class="row"><div class="small-12 columns"><!-- tarei was here -->';
+		return $markup;
+
+	}
+
+	return;
+}
+
+add_filter( 'infusion_featured_posts_closing_tag', 'featured_posts_closing_markup' );
+
+
+function featured_posts_opening_markup(){
+
+	if ( is_front_page() || is_home() || is_page_template( 'templates/full-width' ) ) {
+
+		$markup = '</div></div><!-- tarei was here -->';
+
+		return $markup;
+	}
+
+	return;
+}
+
+add_filter( 'infusion_featured_posts_opening_tag', 'featured_posts_opening_markup' );

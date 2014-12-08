@@ -80,7 +80,7 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 
 			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base );
 
-			echo apply_filters( 'infusion_featured_posts_opening_tag', __return_empty_string() ); ?>
+		echo apply_filters( 'infusion_featured_posts_opening_tag', __return_empty_string() ); ?>
 
 		<?php if ( '' != $title ) { ?>
 			<div class="latest-articles">
