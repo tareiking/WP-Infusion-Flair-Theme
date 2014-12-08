@@ -186,23 +186,12 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 	/*--------------------------------------------------*/
 
 	/**
-	 * Registers and enqueues widget-specific styles.
-	 */
-	public function register_widget_styles() {
-
-		wp_enqueue_style( $this->get_widget_slug().'-widget-styles', plugins_url( 'css/widget.css', __FILE__ ) );
-
-	} // end register_widget_styles
-
-	/**
 	 * Registers and enqueues widget-specific scripts.
 	 */
 	public function register_widget_scripts() {
 
 		wp_enqueue_script( 'masonry' );
 		wp_enqueue_script( 'infusion-featured-posts', get_template_directory_uri() . '/assets/js/featured-posts.js', array( 'jquery' ), '1.0', true );
-
-
 
 	} // end register_widget_scripts
 
