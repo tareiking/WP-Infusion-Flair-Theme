@@ -1,6 +1,8 @@
 <?php
 /**
  * Testimonials by WooThemes Support for Infusion Theme
+ * 
+ * @uses Google Sintony Font : SIL License : http://www.google.com/fonts#UsePlace:use/Collection:Sintony
  */
 
 if ( ! class_exists( 'Woothemes_Testimonials' ) ) {
@@ -36,3 +38,8 @@ function infusion_woothemes_testimonials_init( $defaults ){
 
 	return wp_parse_args( $custom, $defaults );
 }
+
+function infusion_enqueue_sintony_font(){
+	wp_enqueue_style( 'infusion-sintony-font', get_template_directory_uri() . '/assets/extras/sintony-font.css' );
+}
+add_filter( 'wp_enqueue_scripts', 'infusion_enqueue_sintony_font' );
