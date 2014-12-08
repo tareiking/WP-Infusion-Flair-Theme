@@ -82,28 +82,27 @@ add_action( 'wp', 'flair_setup_author' );
  */
 function recent_posts_closing_markup(){
 
-	$markup = array( 'markup' => '<div class="row"><div class="small-12 medium-12 columns">');
+	if ( ! is_home() || ! is_front_page() || ! is_page_template( 'templates/full-width' ) ) {
+		return;
+	}
+
+	$markup = '<div class="row"><div class="small-12 medium-12 columns">';
 
 	return $markup;
 }
 
-add_filter( 'infusion_recent_posts_f5_closing_tag', 'recent_posts_closing_markup' );
+add_filter( 'infusion_recent_posts_closing_tag', 'recent_posts_closing_markup' );
 
 
 function recent_posts_opening_markup(){
 
-	$markup = array( 'markup' => '</div></div>' );
+	if ( ! is_home() || ! is_front_page() || ! is_page_template( 'templates/full-width' ) )	 {
+		return;	
+	}
+
+	$markup = '</div></div>';
 
 	return $markup;
 }
 
-add_filter( 'infusion_recent_posts_f5_opening_tag', 'recent_posts_opening_markup' );
-
-function alter_recent_posts_qry( $qry ) {
-
-	$qry['posts_per_page'] = 4;
-
-	return $qry;
-}
-
-add_filter ('infusion_recent_posts_query_args', 'alter_recent_posts_qry' );
+add_filter( 'infusion_recent_posts_opening_tag', 'recent_posts_opening_markup' );
