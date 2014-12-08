@@ -82,15 +82,26 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 
 		echo apply_filters( 'infusion_featured_posts_opening_tag', __return_empty_string() ); ?>
 
-		<?php if ( '' != $title ) { ?>
-			<div class="latest-articles">
-				<div class="row">
-					<div class="small-12">
-						<h3 class="widget-title"><?php _e( $title ); ?></h3>
+
+		<?php 
+		// The title. Appears differently depending on whether its full-width or within a widget area
+		if ( '' != $title ) {
+			
+			if ( is_home() || is_front_page() || is_page_template( 'templates/full-width' ) ) { ?>
+				<div class="latest-articles">
+					<div class="row">
+						<div class="small-12">
+							<h3 class="widget-title"><?php _e( $title ); ?></h3>
+						</div>
 					</div>
 				</div>
-			</div>
-		<?php } ?>
+			<?php } else { ?>
+			
+				<h3 class="widget-title"><?php _e( $title ); ?></h3>
+
+			<?php }
+		} ?>
+
 
 		<!-- Masonry Widget Render starts here... -->
 		<div id="masonry-loop">
