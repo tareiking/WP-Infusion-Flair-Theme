@@ -99,11 +99,11 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 
 				<article class="masonry-entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 					<div class="masonry-thumbnail">
-						<?php // if ( has_post_thumbnail() ) { ?>
-							<?php //the_post_thumbnail('masonry-thumb'); ?>
-						<?php //} else { ?>
+						<?php if ( has_post_thumbnail() ) { ?>
+							<?php the_post_thumbnail('masonry-thumb'); ?>
+						<?php } else { ?>
 							<img class="masonry-thumb" src="<?php echo get_template_directory_uri() . '/assets/img/0'. rand(1, 9) . '.jpg' ?>" alt="">
-						<?php // } ?>
+						<?php } ?>
 					</div><!--.masonry-thumbnail-->
 
 					<div class="masonry-details">
