@@ -180,7 +180,7 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<strong>Recommended</strong>: You should have at least 6 <a href="http://www.wpbeginner.com/beginners-guide/how-to-make-sticky-posts-in-wordpress/">Sticky Posts</a>. Otherwise rows will be partially empty.
+			<strong>Recommended</strong>: When using on homepage or full page templates, should have at least 6 <a href="http://www.wpbeginner.com/beginners-guide/how-to-make-sticky-posts-in-wordpress/">Sticky Posts</a>, otherwise rows will be partially empty.
 		</p>
 
 		<?php
