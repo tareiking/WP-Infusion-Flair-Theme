@@ -188,5 +188,13 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 
 } // end class
 
-// TODO: Remember to change 'Infusion_Masonry_Posts' to match the class name definition
-add_action( 'widgets_init', create_function( '', 'register_widget("Infusion_Masonry_Posts");' ) );
+/**
+ * Initialize our Replacement Recent Posts Widget
+ *
+ * @todo : add filter to disable
+ */
+function infusion_init_featured_posts_widget(){
+	register_widget( 'Infusion_Featured_Posts_Widget' );
+}
+
+add_action( 'widgets_init', 'infusion_init_featured_posts_widget' );
