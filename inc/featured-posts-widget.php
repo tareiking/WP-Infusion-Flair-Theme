@@ -167,8 +167,12 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of sticky posts to show:' ); ?></label><br>	
 			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
+		</p>
+
+		<p>
+			<strong>Recommended</strong>: You should have at least 6 <a href="http://www.wpbeginner.com/beginners-guide/how-to-make-sticky-posts-in-wordpress/">Sticky Posts</a>. Otherwise rows will be partially empty.
 		</p>
 
 		<?php
