@@ -14,3 +14,25 @@ function woo_custom_load_testimonials_rotation () {
  
 } // End woo_custom_load_testimonials_rotation()
 add_action( 'wp_enqueue_scripts', 'woo_custom_load_testimonials_rotation' );
+
+/**
+ * Testimonials by WooThemes
+ */
+add_filter( 'woothemes_testimonials_args', 'infusion_woothemes_testimonials_init' );
+
+function infusion_woothemes_testimonials_init( $defaults ){
+
+	$custom = __return_empty_array();
+
+	if ( is_home() || is_front_page() || is_page_template( 'templates/full-width' ) ) {
+
+		$custom = 
+		array(
+			'before' 			=> '</div></div><div class="widget widget_woothemes_testimonials">',
+			'after' 			=> '</div><div class="row"><div class="small-12 medium-12 columns">',
+		);
+
+	}
+
+	return wp_parse_args( $custom, $defaults );
+}
