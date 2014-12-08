@@ -78,10 +78,9 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 
 			echo $before_widget;
 
-			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base ); ?>
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base );
 
-		<!-- @TODO: Must declare support if using foundation columns, helps go full screen -->
-		</div></div>
+			echo apply_filters( 'infusion_featured_posts_opening_tag', __return_empty_string() ); ?>
 
 		<?php if ( '' != $title ) { ?>
 			<div class="latest-articles">
@@ -123,11 +122,9 @@ class Infusion_Featured_Posts_Widget extends WP_Widget {
 
 		</div><!--/#masonry-loop-->
 
-		<!-- @TODO: Must declare support if using foundation columns, helps go full screen -->
-		<div class="row">
-			<div class="small-12 columns">
-
 		<?php
+
+		echo apply_filters( 'infusion_featured_posts_closing_tag', __return_empty_string() );
 
 		wp_reset_postdata();
 
