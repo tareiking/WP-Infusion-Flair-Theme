@@ -9,6 +9,10 @@
 	@include clearfix;
 	overflow: hidden;
 
+	.testimonials {
+		position: relative;
+	}
+
 	.testimonials-list {
 		@include clearfix;
 	}
@@ -48,8 +52,7 @@
 
 	.flex-control-nav {
 		position: relative;
-		bottom: -10px;
-		overflow: hidden !important;
+		bottom: -20px;
 
 		li {
 
@@ -68,4 +71,12 @@
 			}
 		}
 	}
+
+	.flex-direction-nav {
+		top: 50%;
+	}
+	.testimonials:hover .flex-prev { opacity: 0.3; left: 10px; }
+	.testimonials:hover .flex-next { opacity: 0.3; right: 10px; }
+	.testimonials:hover .flex-next:hover, .testimonials:hover .flex-prev:hover { opacity: 1; }
+
 }
